@@ -5,20 +5,24 @@ struct MainView: View {
 
     let store: StoreOf<MainReducer>
     
-    @State var selectedTab = YearMonth(year: 1, month: 1)
+    @State var selectedTabIndex = 0
 
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
-            TabView(selection: $selectedTab) {
-                ForEach(viewStore.monthList, id: \.self) { month in
-                    MainPageView(month: month).tag(month)
+            TabView(selection: $selectedTabIndex) {
+                ForEach(viewStore.monthList.indices, id: \.self) { index in
+                    let month = viewStore.monthList[index]
+                    MainPageView(month: month).environment(\.layoutDirection, .leftToRight)
                 }
-            }.tabViewStyle(.page).onAppear {
+            }.tabViewStyle(.page)
+            .environment(\.layoutDirection, .rightToLeft)
+            .onAppear {
                 viewStore.send(.onAppear)
-            }.onChange(of: selectedTab) { newSelectedTab in
-                viewStore.send(.onPageSelected(newSelectedTab))
-            }.task(id: viewStore.selectedTab) {
-                selectedTab = viewStore.selectedTab
+            }.onChange(of: selectedTabIndex) { newIndex in
+                NSLog("newIndex = %d", newIndex)
+                if(newIndex == 0) {
+                    viewStore.send(.addPreviousPage)
+                }
             }
         }
     }

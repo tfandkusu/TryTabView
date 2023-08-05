@@ -9,26 +9,23 @@ struct MainReducer : Reducer {
     
     enum Action : Equatable {
         case onAppear
-        case onPageSelected(YearMonth)
+        case addPreviousPage
     }
     
     func reduce(into state: inout State, action: Action) -> Effect<Action> {
         switch action {
         case .onAppear:
             state.monthList = [
-                YearMonth(year: 2023, month: 7),
-                YearMonth(year: 2023, month: 8)
+                YearMonth(year: 2023, month: 8),
+                YearMonth(year: 2023, month: 7)
             ]
             state.selectedTab = YearMonth(year: 2023, month: 8)
             return .none
-        case let .onPageSelected(month):
-            if(month == state.monthList.first) {
-                let opticalFirstPage = state.monthList.first
-                if let firstPage = opticalFirstPage {
-                    let newMonth = firstPage.previous()
-                    // state.monthList = [newMonth] + state.monthList
-                    // state.selectedTab = state.monthList[1]
-                }
+        case .addPreviousPage:
+            let opticalLastPage = state.monthList.last
+            if let lastPage = opticalLastPage {
+                let newMonth = lastPage.previous()
+                state.monthList =  state.monthList + [newMonth]
             }
             return .none
         }
