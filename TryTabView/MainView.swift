@@ -1,14 +1,19 @@
 import SwiftUI
 
 struct MainView: View {
+    let monthList = [
+        YearMonth(year: 2023, month: 6),
+        YearMonth(year: 2023, month: 7),
+        YearMonth(year: 2023, month: 8),
+    ]
+    @State private var selectedTab = YearMonth(year: 2023, month: 8)
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+        TabView(selection: $selectedTab) {
+            ForEach(monthList, id: \.self) { month in
+                MainPageView(month: month).tag(month)
+            }
+        }.tabViewStyle(.page)
     }
 }
 

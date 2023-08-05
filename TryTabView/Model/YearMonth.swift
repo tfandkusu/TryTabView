@@ -1,6 +1,6 @@
 import Foundation
 
-struct YearMonth : Equatable {
+struct YearMonth : Equatable, Hashable {
     var year: Int
     var month: Int
     
