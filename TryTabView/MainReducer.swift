@@ -22,7 +22,14 @@ struct MainReducer : Reducer {
             state.selectedTab = YearMonth(year: 2023, month: 8)
             return .none
         case let .onPageSelected(month):
-            NSLog("month = %04d/%02d",month.year, month.month)
+            if(month == state.monthList.first) {
+                let opticalFirstPage = state.monthList.first
+                if let firstPage = opticalFirstPage {
+                    let newMonth = firstPage.previous()
+                    // state.monthList = [newMonth] + state.monthList
+                    // state.selectedTab = state.monthList[1]
+                }
+            }
             return .none
         }
     }
