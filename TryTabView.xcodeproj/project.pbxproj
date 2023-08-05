@@ -14,6 +14,9 @@
 		B24E57812A7E8912004B60E0 /* TryTabViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24E57802A7E8912004B60E0 /* TryTabViewTests.swift */; };
 		B24E578B2A7E8912004B60E0 /* TryTabViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24E578A2A7E8912004B60E0 /* TryTabViewUITests.swift */; };
 		B24E578D2A7E8912004B60E0 /* TryTabViewUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24E578C2A7E8912004B60E0 /* TryTabViewUITestsLaunchTests.swift */; };
+		B24E579A2A7E8C46004B60E0 /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24E57992A7E8C46004B60E0 /* MainPageView.swift */; };
+		B24E579D2A7E8C9B004B60E0 /* YearMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24E579C2A7E8C9B004B60E0 /* YearMonth.swift */; };
+		B24E57A02A7E8D43004B60E0 /* YearMonthTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24E579F2A7E8D43004B60E0 /* YearMonthTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		B24E57862A7E8912004B60E0 /* TryTabViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TryTabViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B24E578A2A7E8912004B60E0 /* TryTabViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryTabViewUITests.swift; sourceTree = "<group>"; };
 		B24E578C2A7E8912004B60E0 /* TryTabViewUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryTabViewUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B24E57992A7E8C46004B60E0 /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
+		B24E579C2A7E8C9B004B60E0 /* YearMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearMonth.swift; sourceTree = "<group>"; };
+		B24E579F2A7E8D43004B60E0 /* YearMonthTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearMonthTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +100,12 @@
 		B24E576E2A7E8911004B60E0 /* TryTabView */ = {
 			isa = PBXGroup;
 			children = (
+				B24E579B2A7E8C85004B60E0 /* Model */,
 				B24E576F2A7E8911004B60E0 /* TryTabViewApp.swift */,
 				B24E57712A7E8911004B60E0 /* MainView.swift */,
 				B24E57732A7E8911004B60E0 /* Assets.xcassets */,
 				B24E57752A7E8911004B60E0 /* Preview Content */,
+				B24E57992A7E8C46004B60E0 /* MainPageView.swift */,
 			);
 			path = TryTabView;
 			sourceTree = "<group>";
@@ -113,6 +121,7 @@
 		B24E577F2A7E8912004B60E0 /* TryTabViewTests */ = {
 			isa = PBXGroup;
 			children = (
+				B24E579E2A7E8D1A004B60E0 /* Model */,
 				B24E57802A7E8912004B60E0 /* TryTabViewTests.swift */,
 			);
 			path = TryTabViewTests;
@@ -125,6 +134,22 @@
 				B24E578C2A7E8912004B60E0 /* TryTabViewUITestsLaunchTests.swift */,
 			);
 			path = TryTabViewUITests;
+			sourceTree = "<group>";
+		};
+		B24E579B2A7E8C85004B60E0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B24E579C2A7E8C9B004B60E0 /* YearMonth.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B24E579E2A7E8D1A004B60E0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B24E579F2A7E8D43004B60E0 /* YearMonthTest.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +283,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B24E57722A7E8911004B60E0 /* MainView.swift in Sources */,
+				B24E579D2A7E8C9B004B60E0 /* YearMonth.swift in Sources */,
 				B24E57702A7E8911004B60E0 /* TryTabViewApp.swift in Sources */,
+				B24E579A2A7E8C46004B60E0 /* MainPageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B24E57812A7E8912004B60E0 /* TryTabViewTests.swift in Sources */,
+				B24E57A02A7E8D43004B60E0 /* YearMonthTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
