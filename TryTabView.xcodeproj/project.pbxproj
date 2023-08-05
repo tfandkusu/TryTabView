@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B24E57702A7E8911004B60E0 /* TryTabViewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24E576F2A7E8911004B60E0 /* TryTabViewApp.swift */; };
-		B24E57722A7E8911004B60E0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24E57712A7E8911004B60E0 /* ContentView.swift */; };
+		B24E57722A7E8911004B60E0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24E57712A7E8911004B60E0 /* MainView.swift */; };
 		B24E57742A7E8911004B60E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B24E57732A7E8911004B60E0 /* Assets.xcassets */; };
 		B24E57772A7E8911004B60E0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B24E57762A7E8911004B60E0 /* Preview Assets.xcassets */; };
 		B24E57812A7E8912004B60E0 /* TryTabViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24E57802A7E8912004B60E0 /* TryTabViewTests.swift */; };
@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		B24E576C2A7E8911004B60E0 /* TryTabView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TryTabView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B24E576F2A7E8911004B60E0 /* TryTabViewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryTabViewApp.swift; sourceTree = "<group>"; };
-		B24E57712A7E8911004B60E0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B24E57712A7E8911004B60E0 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		B24E57732A7E8911004B60E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B24E57762A7E8911004B60E0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B24E577C2A7E8912004B60E0 /* TryTabViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TryTabViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,7 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				B24E576F2A7E8911004B60E0 /* TryTabViewApp.swift */,
-				B24E57712A7E8911004B60E0 /* ContentView.swift */,
+				B24E57712A7E8911004B60E0 /* MainView.swift */,
 				B24E57732A7E8911004B60E0 /* Assets.xcassets */,
 				B24E57752A7E8911004B60E0 /* Preview Content */,
 			);
@@ -257,7 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B24E57722A7E8911004B60E0 /* ContentView.swift in Sources */,
+				B24E57722A7E8911004B60E0 /* MainView.swift in Sources */,
 				B24E57702A7E8911004B60E0 /* TryTabViewApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
