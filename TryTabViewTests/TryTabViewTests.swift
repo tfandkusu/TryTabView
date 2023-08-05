@@ -1,10 +1,3 @@
-//
-//  TryTabViewTests.swift
-//  TryTabViewTests
-//
-//  Created by toya on 2023/08/05.
-//
-
 import XCTest
 @testable import TryTabView
 

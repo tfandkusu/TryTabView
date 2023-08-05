@@ -1,10 +1,3 @@
-//
-//  TryTabViewUITestsLaunchTests.swift
-//  TryTabViewUITests
-//
-//  Created by toya on 2023/08/05.
-//
-
 import XCTest
 
 final class TryTabViewUITestsLaunchTests: XCTestCase {
