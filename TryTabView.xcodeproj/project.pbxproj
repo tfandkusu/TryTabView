@@ -19,7 +19,7 @@
 		B24E57A02A7E8D43004B60E0 /* YearMonthTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24E579F2A7E8D43004B60E0 /* YearMonthTest.swift */; };
 		B24E57A32A7EA6A5004B60E0 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = B24E57A22A7EA6A5004B60E0 /* ComposableArchitecture */; };
 		B24E57A52A7EA6CE004B60E0 /* MainReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24E57A42A7EA6CE004B60E0 /* MainReducer.swift */; };
-		B24E57B02A7FE873004B60E0 /* MonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24E57AF2A7FE873004B60E0 /* MonthViewController.swift */; };
+		B24E57B62A7FF268004B60E0 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24E57B52A7FF268004B60E0 /* PageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +54,7 @@
 		B24E579C2A7E8C9B004B60E0 /* YearMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearMonth.swift; sourceTree = "<group>"; };
 		B24E579F2A7E8D43004B60E0 /* YearMonthTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearMonthTest.swift; sourceTree = "<group>"; };
 		B24E57A42A7EA6CE004B60E0 /* MainReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainReducer.swift; sourceTree = "<group>"; };
-		B24E57AF2A7FE873004B60E0 /* MonthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthViewController.swift; sourceTree = "<group>"; };
+		B24E57B52A7FF268004B60E0 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +113,7 @@
 				B24E57752A7E8911004B60E0 /* Preview Content */,
 				B24E57992A7E8C46004B60E0 /* MainPageView.swift */,
 				B24E57A42A7EA6CE004B60E0 /* MainReducer.swift */,
-				B24E57AF2A7FE873004B60E0 /* MonthViewController.swift */,
+				B24E57B52A7FF268004B60E0 /* PageViewController.swift */,
 			);
 			path = TryTabView;
 			sourceTree = "<group>";
@@ -300,8 +300,8 @@
 				B24E579D2A7E8C9B004B60E0 /* YearMonth.swift in Sources */,
 				B24E57702A7E8911004B60E0 /* TryTabViewApp.swift in Sources */,
 				B24E579A2A7E8C46004B60E0 /* MainPageView.swift in Sources */,
-				B24E57B02A7FE873004B60E0 /* MonthViewController.swift in Sources */,
 				B24E57A52A7EA6CE004B60E0 /* MainReducer.swift in Sources */,
+				B24E57B62A7FF268004B60E0 /* PageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
