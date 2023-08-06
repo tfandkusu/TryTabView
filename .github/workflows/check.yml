@@ -1,0 +1,26 @@
+name: check
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+jobs:
+  check:
+    runs-on: macos-13
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      # 単体テスト実行 + カバレッジレポート出力
+      - run: xcodebuild test -project TryTabView.xcodeproj -scheme TryTabView -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.4' -resultBundlePath artifacts/ResultBundle.xcresult
+      # Codecov にカバレッジレポートをアップロード
+      - uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          swift: true
+          fail_ci_if_error: true
