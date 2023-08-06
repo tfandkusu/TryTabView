@@ -16,8 +16,8 @@ struct MainReducer : Reducer {
         switch action {
         case .onAppear:
             state.monthList = [
+                YearMonth(year: 2023, month: 7),
                 YearMonth(year: 2023, month: 8),
-                YearMonth(year: 2023, month: 7)
             ]
             state.selectedTab = YearMonth(year: 2023, month: 8)
             return .none
