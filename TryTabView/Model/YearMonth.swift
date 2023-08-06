@@ -1,6 +1,10 @@
 import Foundation
 
-struct YearMonth : Equatable, Hashable {
+struct YearMonth : Equatable, Hashable, Comparable {
+    static func < (lhs: YearMonth, rhs: YearMonth) -> Bool {
+        lhs.year * 100 + lhs.month < rhs.year * 100 + rhs.month
+    }
+    
     var year: Int
     var month: Int
     
