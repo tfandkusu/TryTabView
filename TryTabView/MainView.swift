@@ -14,6 +14,10 @@ struct MainView: View {
                             ForEach(viewStore.monthList.indices, id: \.self) { index in
                                 let month = viewStore.monthList[index]
                                 MainPageView(month: month).frame(width: geometry.size.width)
+                                    .id(index)
+                                    .onAppear {
+                                        NSLog("onAppear %04d/%02d", month.year, month.month)
+                                    }
                             }
                         }
                     }.task(id: viewStore.selectedTab) {
