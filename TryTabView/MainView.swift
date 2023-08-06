@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct MainView: View {
-
     var body: some View {
         PageViewController(monthList: [
             YearMonth(year: 2023, month: 8),
