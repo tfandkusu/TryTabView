@@ -1,7 +1,8 @@
 import Foundation
 import SwiftUI
 
-class MainPageViewController : UIViewController {
+// 一月分のページ
+class MonthViewController : UIViewController {
     
     var month: YearMonth
     
