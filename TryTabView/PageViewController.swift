@@ -4,8 +4,8 @@ import UIKit
 
 // https://developer.apple.com/tutorials/swiftui/interfacing-with-uikit
 // そのまま
-struct PageViewController<Page: View>: UIViewControllerRepresentable {
-    var pages: [Page]
+struct PageViewController: UIViewControllerRepresentable {
+    var monthList: [YearMonth]
 
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -34,7 +34,7 @@ struct PageViewController<Page: View>: UIViewControllerRepresentable {
 
         init(_ pageViewController: PageViewController) {
             parent = pageViewController
-            controllers = parent.pages.map { UIHostingController(rootView: $0) }
+            controllers = parent.monthList.map { UIHostingController(rootView: MainPageView(month: $0)) }
         }
 
 
@@ -43,12 +43,15 @@ struct PageViewController<Page: View>: UIViewControllerRepresentable {
             viewControllerBefore viewController: UIViewController) -> UIViewController?
         {
             // 左のページを開く
-            // pages ではインデックスが増える
             guard let index = controllers.firstIndex(of: viewController) else {
                 return nil
             }
             if index + 1 == controllers.count {
-                return nil
+                if let oldestMonth = parent.monthList.last {
+                    let newMonth = oldestMonth.previous()
+                    parent.monthList = parent.monthList + [newMonth]
+                    controllers = controllers + [UIHostingController(rootView: MainPageView(month: newMonth))]
+                }
             }
             return controllers[index + 1]
         }
@@ -59,7 +62,6 @@ struct PageViewController<Page: View>: UIViewControllerRepresentable {
             viewControllerAfter viewController: UIViewController) -> UIViewController?
         {
             // 右のページを開く
-            // pages ではインデックスが減る
             guard let index = controllers.firstIndex(of: viewController) else {
                 return nil
             }

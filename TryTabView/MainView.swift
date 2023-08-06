@@ -4,9 +4,9 @@ import ComposableArchitecture
 struct MainView: View {
 
     var body: some View {
-        PageViewController(pages: [
-            MainPageView(month: YearMonth(year: 2023, month: 8)),
-            MainPageView(month: YearMonth(year: 2023, month: 7)),
+        PageViewController(monthList: [
+            YearMonth(year: 2023, month: 8),
+            YearMonth(year: 2023, month: 7),
         ])
     }
 }
