@@ -8,12 +8,16 @@ struct MainView: View {
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             GeometryReader { geometry in
-                ScrollView(.horizontal, showsIndicators: false) {
-                    LazyHStack {
-                        ForEach(viewStore.monthList.indices, id: \.self) { index in
-                            let month = viewStore.monthList[index]
-                            MainPageView(month: month).frame(width: geometry.size.width)
+                ScrollViewReader { proxy in
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        LazyHStack {
+                            ForEach(viewStore.monthList.indices, id: \.self) { index in
+                                let month = viewStore.monthList[index]
+                                MainPageView(month: month).frame(width: geometry.size.width)
+                            }
                         }
+                    }.task(id: viewStore.selectedTab) {
+                        proxy.scrollTo(viewStore.selectedTab)
                     }
                 }
             }

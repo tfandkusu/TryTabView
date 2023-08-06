@@ -4,7 +4,7 @@ import ComposableArchitecture
 struct MainReducer : Reducer {
     struct State : Equatable {
         var monthList = [YearMonth(year: 1,month: 1)]
-        var selectedTab = YearMonth(year: 1,month: 1)
+        var selectedTab = 0
     }
     
     enum Action : Equatable {
@@ -19,7 +19,7 @@ struct MainReducer : Reducer {
                 YearMonth(year: 2023, month: 7),
                 YearMonth(year: 2023, month: 8),
             ]
-            state.selectedTab = YearMonth(year: 2023, month: 8)
+            state.selectedTab = 1
             return .none
         case .addPreviousPage:
             let opticalLastPage = state.monthList.last
