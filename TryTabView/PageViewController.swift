@@ -42,20 +42,8 @@ struct PageViewController<Page: View>: UIViewControllerRepresentable {
             _ pageViewController: UIPageViewController,
             viewControllerBefore viewController: UIViewController) -> UIViewController?
         {
-            guard let index = controllers.firstIndex(of: viewController) else {
-                return nil
-            }
-            if index == 0 {
-                return nil
-            }
-            return controllers[index - 1]
-        }
-
-
-        func pageViewController(
-            _ pageViewController: UIPageViewController,
-            viewControllerAfter viewController: UIViewController) -> UIViewController?
-        {
+            // 左のページを開く
+            // pages ではインデックスが増える
             guard let index = controllers.firstIndex(of: viewController) else {
                 return nil
             }
@@ -63,6 +51,22 @@ struct PageViewController<Page: View>: UIViewControllerRepresentable {
                 return nil
             }
             return controllers[index + 1]
+        }
+
+
+        func pageViewController(
+            _ pageViewController: UIPageViewController,
+            viewControllerAfter viewController: UIViewController) -> UIViewController?
+        {
+            // 右のページを開く
+            // pages ではインデックスが減る
+            guard let index = controllers.firstIndex(of: viewController) else {
+                return nil
+            }
+            if index == 0 {
+                return nil
+            }
+            return controllers[index - 1]
         }
     }
 }
