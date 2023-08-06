@@ -1,24 +1,41 @@
 import SwiftUI
+import ComposableArchitecture
 
 struct MainView: View {
-    let monthList = [
-        YearMonth(year: 2023, month: 6),
-        YearMonth(year: 2023, month: 7),
-        YearMonth(year: 2023, month: 8),
-    ]
-    @State private var selectedTab = YearMonth(year: 2023, month: 8)
+
+    let store: StoreOf<MainReducer>
+    
+    @State var selectedTabIndex = 0
 
     var body: some View {
-        TabView(selection: $selectedTab) {
-            ForEach(monthList, id: \.self) { month in
-                MainPageView(month: month).tag(month)
+        WithViewStore(self.store, observe: { $0 }) { viewStore in
+            TabView(selection: $selectedTabIndex) {
+                ForEach(viewStore.monthList.indices, id: \.self) { index in
+                    let month = viewStore.monthList[index]
+                    MainPageView(month: month).environment(\.layoutDirection, .leftToRight)
+                }
+            }.tabViewStyle(.page)
+            .environment(\.layoutDirection, .rightToLeft)
+            .onAppear {
+                viewStore.send(.onAppear)
+            }.onChange(of: selectedTabIndex) { newIndex in
+                NSLog("newIndex = %d", newIndex)
+                if(newIndex == 0) {
+                    viewStore.send(.addPreviousPage)
+                }
             }
-        }.tabViewStyle(.page)
+        }
     }
 }
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        MainView(
+            store: Store(
+                initialState: MainReducer.State()
+            ) {
+            MainReducer()
+          }
+        )
     }
 }

@@ -1,10 +1,17 @@
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct TryTabViewApp: App {
     var body: some Scene {
         WindowGroup {
-            MainView()
+            MainView(
+                store: Store(
+                    initialState: MainReducer.State()
+                ) {
+                    MainReducer()
+                }
+            )
         }
     }
 }
