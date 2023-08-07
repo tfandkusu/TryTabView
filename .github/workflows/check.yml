@@ -19,6 +19,8 @@ jobs:
         with:
           fetch-depth: 0
       - uses: irgaly/setup-mint@v1
+      # XcodeGen
+      - run: mint run xcodegen xcodegen generate
       # フォーマットチェック
       - run: mint run swiftformat --lint .
       # 単体テスト実行 + カバレッジレポート出力
