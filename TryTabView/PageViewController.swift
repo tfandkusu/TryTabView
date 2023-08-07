@@ -1,7 +1,6 @@
 import SwiftUI
 import UIKit
 
-
 // https://developer.apple.com/tutorials/swiftui/interfacing-with-uikit
 // そのまま
 struct PageViewController: UIViewControllerRepresentable {
@@ -11,37 +10,34 @@ struct PageViewController: UIViewControllerRepresentable {
         Coordinator(self)
     }
 
-
     func makeUIViewController(context: Context) -> UIPageViewController {
         let pageViewController = UIPageViewController(
             transitionStyle: .scroll,
-            navigationOrientation: .horizontal)
+            navigationOrientation: .horizontal
+        )
         pageViewController.dataSource = context.coordinator
         return pageViewController
     }
 
-
     func updateUIViewController(_ pageViewController: UIPageViewController, context: Context) {
         pageViewController.setViewControllers(
-            [context.coordinator.controllers[0]], direction: .forward, animated: true)
+            [context.coordinator.controllers[0]], direction: .forward, animated: true
+        )
     }
-
 
     class Coordinator: NSObject, UIPageViewControllerDataSource {
         var parent: PageViewController
         var controllers = [UIViewController]()
-
 
         init(_ pageViewController: PageViewController) {
             parent = pageViewController
             controllers = parent.monthList.map { UIHostingController(rootView: MainPageView(month: $0)) }
         }
 
-
         func pageViewController(
-            _ pageViewController: UIPageViewController,
-            viewControllerBefore viewController: UIViewController) -> UIViewController?
-        {
+            _: UIPageViewController,
+            viewControllerBefore viewController: UIViewController
+        ) -> UIViewController? {
             // 左のページを開く
             guard let index = controllers.firstIndex(of: viewController) else {
                 return nil
@@ -56,11 +52,10 @@ struct PageViewController: UIViewControllerRepresentable {
             return controllers[index + 1]
         }
 
-
         func pageViewController(
-            _ pageViewController: UIPageViewController,
-            viewControllerAfter viewController: UIViewController) -> UIViewController?
-        {
+            _: UIPageViewController,
+            viewControllerAfter viewController: UIViewController
+        ) -> UIViewController? {
             // 右のページを開く
             guard let index = controllers.firstIndex(of: viewController) else {
                 return nil

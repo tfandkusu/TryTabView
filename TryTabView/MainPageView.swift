@@ -1,9 +1,8 @@
 import SwiftUI
 
 struct MainPageView: View {
-    
     var month: YearMonth
-    
+
     var body: some View {
         VStack(alignment: .leading) {
             let text = String(format: "%04d/%02d", month.year, month.month)
